@@ -1,0 +1,41 @@
+test_001_die_change_weight (__main__.MontecarloTestSuite)
+Tests to confirm that we can validly add a weight and see the change refleccted in the "weights" array. ... ok
+test_002_die_change_weight (__main__.MontecarloTestSuite)
+Tries to change the weight of a face that doesn't exist. ... ok
+test_003_die_change_weight (__main__.MontecarloTestSuite)
+Tries to change the weight of a face to an invalid value. ... ok
+test_004_die_roll (__main__.MontecarloTestSuite)
+Ensures that only valid faces end up in the roll's output. ... ok
+test_005_die_roll (__main__.MontecarloTestSuite)
+Ensures that the output list has a length equal to the "n" parameter. ... ok
+test_006_die_get_df (__main__.MontecarloTestSuite)
+Ensures that the method returns a DataFrame with correct values. ... ok
+test_007_die_get_name (__main__.MontecarloTestSuite)
+Ensures that the correct name is returned. ... ok
+test_00_die_init (__main__.MontecarloTestSuite)
+Confirms that the init method correctly sets the weights array to 1.0 values of a correct length. ... ok
+test_100_game_init (__main__.MontecarloTestSuite)
+Checks that length of created dice attribute matches length of input array. Input array has identical dice. ... ok
+test_101_game_init (__main__.MontecarloTestSuite)
+Attempts to pass in dice containing different faces. Ensures that no dice attribute is assigned due to the incorrect input. ... ok
+test_102_game_play (__main__.MontecarloTestSuite)
+Plays a game with 20 rolls. Ensures that the DataFrame attribute has 20 rows and 5 columns (for the 5 Die objects). ... ok
+test_103_game_play (__main__.MontecarloTestSuite)
+Plays two consecutive games, first with 20 rolls and second with 25 rolls. Ensures that only the second game's results ... ok
+test_104_game_show_df (__main__.MontecarloTestSuite)
+Plays one game, then checks that the show_df method (in wide form) returns the DataFrame attribute identically. ... ok
+test_105_game_show_df (__main__.MontecarloTestSuite)
+Plays one game. Calls the show_df method with the "narrow" parameter. Ensures that the shape of the narrow DataFrame ... ok
+test_200_analyzer_init (__main__.MontecarloTestSuite)
+Initializes an Analyzer object and confirms its type attribute is correct. ... ok
+test_201_analyzer_jackpot (__main__.MontecarloTestSuite)
+Creates a game object that guarantees that every roll will be a jackpot (two faces, one with weight 0.0). Ensures ... ok
+test_202_analyzer_combo_counts (__main__.MontecarloTestSuite)
+Creates a game object that is virtually guaranteed to have three different combinations. Check that after calling ... ok
+test_203_analyzer_face_counts_per_roll (__main__.MontecarloTestSuite)
+Creates a game object that plays a 100-roll game. The dice have six faces each. Ensures that the face_counts_df attribute ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.144s
+
+OK
