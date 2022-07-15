@@ -7,4 +7,4 @@ setup(name = "montecarlo_package",
      author = "David Siamon",
      author_email = "dws3qd@virginia.edu",
      license = "GNU General Public License v3.0",
-     packages = [numpy, pandas, random])
+     packages = [])
