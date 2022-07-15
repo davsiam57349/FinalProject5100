@@ -7,7 +7,7 @@ Most recent patch July 14, 2022 (0.0.0)
 
 ## Synopsis
 This package contains three classes, used in conjunction to create a basic [Monte Carlo Simulator](https://en.wikipedia.org/wiki/Monte_Carlo_method). 
-To install, clone this repo with `git clone https://github.com/davsiam57349/FinalProject5100`. Then, when in root of repo, run `pip install -e`
+To install, clone this repo with `git clone https://github.com/davsiam57349/FinalProject5100`. Then, when in root of repo, run `pip install -e .`
 
 Once installed, the three classes can be imported via `from montecarlo_package import Die, Game, Analyzer`
 
