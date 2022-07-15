@@ -9,10 +9,12 @@ Most recent patch July 14, 2022 (0.0.0)
 This package contains three classes, used in conjunction to create a basic [Monte Carlo Simulator](https://en.wikipedia.org/wiki/Monte_Carlo_method). 
 To install, clone this repo with `git clone https://github.com/davsiam57349/FinalProject5100`. Then, when in root of repo, run `pip install -e`
 
+Once installed, the three classes can be imported via `from montecarlo_package import Die, Game, Analyzer`
+
 ### Die
 The Die object can be constructed to model a standard six-sided numeric die, but contains adjustable parameters to be outlined further below.
 
-Firstly, we can initialize a Die with our \_\_init_\_\ method:
+Firstly, we can initialize a Die with our \_\_init_\_ method:
 
 `dice_values = [1, 2, 3, 4, 5, 6]`  
 `regular_die = Die('regular_die', dice_values)` 
@@ -74,7 +76,7 @@ This code initializes an Analyzer object for the Game object created above. We c
 
 ### Die Methods:
 
-`\_\_init_\_  ` 
+`__init__` 
 Initializes a Die object. name and arr are passed in and set to their respective attributes,
 and weights are all set to 1.0. Additionally, a private DataFrame is initialized, storing the
 faces alongside their weights.
@@ -116,6 +118,104 @@ params
 returns 
 A list of all faces rolled during the method's execution
 
+`get_df`  
+A getter method to access the Die's private DataFrame attribute.
+
+params  
+None
+
+returns 
+The Die's private DataFrame attribute.
+
+`get_name`  
+A getter method to access the Die's private name attribute.
+
+params  
+None
+
+returns 
+The Die's private name attribute.
+
+### Die Public Attributes:
+str `name`
+list `faces`
+list `weights`
+
+### Game Methods:
+`__init__`
+Initializes a Game object with a dice attribute containing one or more Die objects. Each Die must contain the same faces, otherwise init fails.
+
+params  
+dice (list) -- A list of instantiated Die objects
+
+returns 
+None
+
+`play`
+Rolls each Die object n times. Stores results of the rolls in the Game private DataFrame with each roll as a row and each Die as a column.
+
+params  
+(optional) n (int) -- number of rolls in the game. Defaults to 1.
+
+returns 
+None
+
+`show_df`
+A getter method to access the Game's private DataFrame attribute. Takes an optional param to display the DataFrame as "narrow", with a double-index for rolls and dice.
+
+params  
+(optional) width (str) -- If "narrow", method will return a doubly-indexed DataFrame. Defaults to "wide".
+
+returns 
+The Game's private DataFrame attribute
+
+### Game Public Attributes:
+list `dice`
+
+### Analyzer Methods:
+`__init__`  
+Initializes the Analyzer object with the game passed in. This method also determines the type of the face values on the dice used in the game.
+
+params  
+game (Game object) -- an instantiatied Game object
+
+returns 
+None
+
+`jackpot `  
+This method returns the number of times the game had a "jackpot", meaning all face values were the same on a given roll. The jackpot data is stored in the Analyzer's jackpot_df attribute, which contains a row for each roll and a corresponding boolean value for whether or not the roll had a jackpot.
+
+params  
+None
+
+returns 
+The number of times the game had a jackpot
+
+`combo_counts`  
+This method fills in the combos_df DataFrame such that each row contains a combination that was rolled in the game and its number of times rolled. Does not return a value but prints a statement indicating that the combos_df was successfully updated.
+
+params  
+None
+
+returns 
+None
+
+`face_counts_per_roll`
+This method fills in the face_counts DataFrame where each row corresponds to a roll, each column is a different face value of the set of dice, and the data represents the number of times each face was rolled on a given roll. Does not return a value but prints a statement indicating that the face_counts_df was successfully updated.
+
+params  
+None
+
+returns 
+None
+
+### Analyzer Public Attributes:
+Game object `game`  
+DataFrame `jackpot_df`  
+DataFrame `combos_df`   
+DateFrame `face_counts_df`  
+string `face_type`
+
 ## Manifest
 - LICENSE
 - README.md
@@ -128,5 +228,5 @@ A list of all faces rolled during the method's execution
   - montecarlo.cpython-39.pyc
   - montecarlo_test.cpython-39.pyc
 - montecarlo_package\
-  - \_\_init_\_\.py
+  - \_\_init_\_.py
   - montecarlo.py
